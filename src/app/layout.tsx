@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +18,68 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="min-h-screen flex flex-col">
+          <header>
+            <nav className="flex justify-around items-center mt-8 ">
+              <Image
+                src={require("../components/Images/best_VapeMart project/logo.svg")}
+                alt="Website__logo"
+                className="w-[250px] h-auto "
+              ></Image>
+              <ul className="flex justify-between items-center gap-4 relative right-8 font-semibold">
+                <Link href="#">
+                  <li className="hover:text-rose-600 duration-700">Home</li>
+                </Link>
+                <Link href="#">
+                  <li className="hover:text-rose-600 duration-700">Shope</li>
+                </Link>
+                <Link href="#">
+                  <li className="hover:text-rose-600 duration-700">Vape</li>
+                </Link>
+                <Link href="#">
+                  <li className="hover:text-rose-600 duration-700">
+                    Best E-Juices
+                  </li>
+                </Link>
+                <Link href="#">
+                  <li className="hover:text-rose-600 duration-700">
+                    Dispossable Vapes
+                  </li>
+                </Link>
+                <Link href="#">
+                  <li className="hover:text-rose-600 duration-700">
+                    Best Tank
+                  </li>
+                </Link>
+                <Link href="#">
+                  <li className="hover:text-rose-600 duration-700">
+                    Accessories
+                  </li>
+                </Link>
+              </ul>
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  className="size-9"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+                  />
+                </svg>
+              </span>
+            </nav>
+          </header>
+          <main className="flex-grow">{children}</main>
+          <footer>This is footer</footer>
+        </div>
+      </body>
     </html>
   );
 }
