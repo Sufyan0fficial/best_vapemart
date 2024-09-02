@@ -24,10 +24,12 @@ export default function Home() {
                 src={require(`../components/Images/best_VapeMart project/Product Categories${category.image}`)}
                 alt={category.name}
                 className="inline-block transition-transform hover:scale-110 duration-700 border rounded-l-3xl "
+                key={category.id}
               ></Image>
               <Link
                 href={`/${category.id}`}
                 className="font-bold hover:text-rose-600 transition-colors duration-500 "
+                key={category.id}
               >
                 {category.name}
               </Link>
