@@ -19,7 +19,10 @@ export default function Home() {
       <div className="flex gap-8 bg-white text-black overflow-hidden ">
         {categories.map((category) => {
           return (
-            <div className="flex flex-col justify-center gap-4 items-center">
+            <div
+              className="flex flex-col justify-center gap-4 items-center"
+              key={category.id}
+            >
               <Image
                 src={require(`../components/Images/best_VapeMart project/Product Categories${category.image}`)}
                 alt={category.name}
